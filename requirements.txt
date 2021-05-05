@@ -1,0 +1,12 @@
+aiofiles==0.6.0
+certifi==2020.12.5
+click==7.1.2
+fastapi==0.63.0
+h11==0.12.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+pydantic==1.7.3
+starlette==0.13.6
+ua-parser==0.10.0
+user-agents==2.2.0
+uvicorn==0.13.4
