@@ -1,10 +1,10 @@
 Fastapi Route Log
 
 <a href="https://pypi.org/project/fastapi-route-log/" target="_blank">
+
 <img src="https://img.shields.io/pypi/v/fastapi-route-log?color=%2334D058label=pypi package" alt="Package version">
-</a>
-<img alt="License" src="https://img.shields.io/github/license/12345k/fastapi_logging"  />
-</p>
+
+<img alt="License" src="https://img.shields.io/github/license/12345k/fastapi_logging"/>
 
 A FastAPI router for logging every request.
 
