@@ -12,13 +12,10 @@ app.router.route_class = LoggingRoute
 
 class Item(BaseModel):
     name: str
-    manufacturerName: str
-    rawMaterialName: str
-    inventoryId: Optional[int] = None
+    userName: str
+    age: str
+    Number: Optional[int] = None
 
 @app.post("/hello_world")
 async def get_test(item:Item,response: Response):
-
-    
-  
     return item
