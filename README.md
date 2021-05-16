@@ -21,7 +21,10 @@ cd fastapi_route_log
 uvicorn dev.main:app --reload
 ```
 check the url: http://localhost:8000/fastapi_dashboard
+# Credential for Dashboard
+Uername : admin 
 
+Password : 12345
 # Code Sample
 
 ```python
