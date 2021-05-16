@@ -9,6 +9,7 @@ import dashboard
 
 app = FastAPI()
 app.router.route_class = LoggingRoute
+# Just add this one line
 app.include_router(dashboard.router)
 
 app.add_middleware(
@@ -21,18 +22,22 @@ app.add_middleware(
 
 class Item(BaseModel):
     name: str
-    manufacturerName: str
-    rawMaterialName: str
-    inventoryId: Optional[int] = None
+    userName: str
+    age: str
+    Degree: Optional[int] = None
 
-@app.post("/hello_world")
+@app.post("/test")
 async def post_test(item:Item,response: Response):  
     return item
 
-@app.post("/hello_prasanna")
-async def ret_pras():
-    return {"Name":"Prasanna Kumar"}
+@app.get("/test1")
+async def get_test1(response: Response):  
+    return "test1"
 
-@app.get("/hello_world")
-async def get_test(response: Response):  
+@app.get("/test2")
+async def get_test2(response: Response):  
+    return "test2"
+
+@app.get("/helloWorld")
+async def get_test3(response: Response):  
     return "hello world"
