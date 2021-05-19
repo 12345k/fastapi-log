@@ -5,13 +5,13 @@ from shutil import rmtree
 
 from setuptools import Command, find_packages, setup
 
-__title__ = "fastapi_route_log"
-__description__ = "A FastAPI route for logging every request " 
+__title__ = "fastapi_log"
+__description__ = "A FastAPI Logger for logging every request " 
 __url__ = "https://github.com/12345k/fastpi-log.git"
 __license__ = "MIT"
 __requires__ = ["fastapi","starlette","user_agents","pydantic" ]
 __keywords__ = ["fastapi","logging","custom","router"]
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "karthick aravindan (12345k), Prasanna Kumar (VpkPrasanna)"
 
 here = pathlib.Path(__file__).parent
@@ -37,7 +37,7 @@ setup(
     url=__url__,
     author=__author__, #about["__author__"],
     license=__license__,
-    packages=find_packages(exclude=("test",)),
+    packages=find_packages(),
     keywords=__keywords__,
     install_requires=__requires__,
     zip_safe=False,
