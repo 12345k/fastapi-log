@@ -3,3 +3,4 @@ user_agents==2.2.0
 pydantic==1.7.3
 fastapi==0.63.0
 secrets==1.0.2
+aiofiles==0.7.0

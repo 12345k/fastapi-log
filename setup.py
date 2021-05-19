@@ -15,6 +15,7 @@ __version__ = "0.0.1"
 __author__ = "karthick aravindan (12345k), Prasanna Kumar (VpkPrasanna)"
 
 here = pathlib.Path(__file__).parent
+print(here)
 about = {}
 
 # # Load the package's _version.py module as a dictionary.
