@@ -18,8 +18,11 @@ security = HTTPBasic()
 
 # router.mount("/static", StaticFiles(directory="static"), name="static")
 
-
-templates = Jinja2Templates(directory="templates")
+import os
+import fastapi_log
+path = os.path.abspath(fastapi_log.__file__)
+path = path.replace("__init__.py","")
+templates = Jinja2Templates(directory=path+"/templates")
 
 count = 0
 
@@ -51,7 +54,7 @@ def utils(val,value):
 
 @router.get("/fastapi_dashboard")
 async def read_item(request: Request,credentials: HTTPBasicCredentials = Depends(get_current_username)):
-    conn = sqlite3.connect('./database/test.db')
+    conn = sqlite3.connect('./.database/test.db')
     conn.row_factory = sqlite3.Row 
     cursor = conn.execute("SELECT * FROM REQUEST").fetchall()
     len_cursor = len(cursor)
@@ -76,7 +79,7 @@ async def read_item(request: Request,credentials: HTTPBasicCredentials = Depends
 
 @router.get("/fastapi_dashboard/api_frequency")
 async def api_frequency():#request: Request,credentials: HTTPBasicCredentials = Depends(get_current_username)):
-    conn = sqlite3.connect('./database/test.db')
+    conn = sqlite3.connect('./.database/test.db')
     conn.row_factory = sqlite3.Row 
     cursor = conn.execute("SELECT * FROM REQUEST").fetchall()
     len_cursor = len(cursor)
@@ -93,7 +96,7 @@ async def api_frequency():#request: Request,credentials: HTTPBasicCredentials = 
 
 @router.get("/fastapi_dashboard/api_time_count")
 async def time_count():#request: Request,credentials: HTTPBasicCredentials = Depends(get_current_username)):
-    conn = sqlite3.connect('./database/test.db')
+    conn = sqlite3.connect('./.database/test.db')
     conn.row_factory = sqlite3.Row 
     end_cursor = conn.execute("SELECT TIME,COUNT(TIME) AS COUNT FROM REQUEST GROUP BY TIME").fetchall()
     end_json_temp =  [[datetime.strptime(i["TIME"],'%Y-%m-%d %H:%M:%S'),i['COUNT']] for i in end_cursor]
