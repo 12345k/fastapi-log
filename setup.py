@@ -11,7 +11,7 @@ __url__ = "https://github.com/12345k/fastpi-log.git"
 __license__ = "MIT"
 __requires__ = ["fastapi","starlette","user_agents","pydantic" ]
 __keywords__ = ["fastapi","logging","custom","router"]
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __author__ = "karthick aravindan (12345k), Prasanna Kumar (VpkPrasanna)"
 
 here = pathlib.Path(__file__).parent

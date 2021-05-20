@@ -14,25 +14,29 @@ A FastAPI router for logging every request.
 ```buildoutcfg
 $ pip install fastapi_log
 ```
-# Dashboard testing
-
-```python
-cd fastapi_route_log
-uvicorn dev.main:app --reload
-```
-check the url: http://localhost:8000/fastapi_dashboard
-# Credential for Dashboard
-Uername : admin 
-
-Password : 12345
 # Code Sample
-
+## For Logging
 ```python
 from fastapi_log.log_request import LoggingRoute
 
 app = FastAPI()
 app.router.route_class = LoggingRoute
 ```
+
+# For Accessing Dashboard
+
+```python
+from fastapi_log import dashboard
+app.include_router(dashboard.router)
+```
+# Credential for Dashboard
+check the url: http://localhost:8000/fastapi_dashboard
+
+Uername : admin 
+
+Password : 12345
+
+
 # Example/Test
 
 ```python
@@ -40,10 +44,7 @@ uvicorn example.main:app --reload
 ```
 
 # Sample Output
-## DASHBOARD
-![Dashboard](fastapi_log/images/dashboard.png)
-
-# Output
+## Logging Output
 
 ```json
 {
@@ -100,7 +101,8 @@ uvicorn example.main:app --reload
 }
 INFO:     127.0.0.1:35984 - "POST /test HTTP/1.1" 200 OK
 ```
-
+## DASHBOARD
+![Dashboard](fastapi_log/images/dashboard.png)
 # More Features are coming up - Keep waiting 
 
 <a href="https://www.buymeacoffee.com/vpkprasanna" target="_blank"><img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" width="300"></a>
