@@ -13,7 +13,10 @@ from datetime import datetime
 from fastapi.routing import APIRoute
 import sqlite3
 
-conn = sqlite3.connect('./.database/test.db')
+path = os.path.abspath(os.path.dirname(__file__))
+path = path.replace("__init__.py","")
+
+conn = sqlite3.connect(path+'/database/test.db')
 
 conn.execute('''CREATE TABLE IF NOT EXISTS REQUEST
          (ENDPOINT        TEXT    NOT NULL,
@@ -143,5 +146,4 @@ class LoggingRoute(APIRoute):
                 raise HTTPException(status_code=422, detail=detail)
 
         return custom_route_handler
-
 
